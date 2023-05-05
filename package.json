@@ -9,6 +9,10 @@
     "uuidv4": "^6.2.13"
   },
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "migrate": "knex migrate:latest",
+		"migrate:down": "knex migrate:down",
+		"migrate:rollback": "knex migrate:rollback",
+		"seed": "knex seed:run"
   }
 }
