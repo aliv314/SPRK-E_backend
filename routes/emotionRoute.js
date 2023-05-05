@@ -4,7 +4,7 @@ const emotionController = require("../controllers/emotionController");
 router
     .route("/")
     .get(emotionController.getEmotion)
-    .post(emotionController.addEmotion);
+    .post(emotionController.postEmotion);
 
 router
     .route("/:id")

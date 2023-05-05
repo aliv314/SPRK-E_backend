@@ -12,6 +12,6 @@ const userController = require("../controllers/userController");
 router
     .route("/:id")
     .get(userController.getUser)
-    .post(userController.addUser);
+    .post(userController.postUser);
 
 module.exports = router;
