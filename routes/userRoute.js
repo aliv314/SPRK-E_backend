@@ -14,14 +14,14 @@ const authorize = require('../middleware/authorize');
 
 // ## POST /api/user/register
 // - Creates a new user.
-// - Expected body: { username, last_name, phone, address, email, password }
+// - Expected body: { username, password }
 router.post("/register", async (req, res) => {
     const { username, password } = req.body;
     //if username already exists
     try{
-       const username =  await knex('user').where({username:username});
-       if (username){
-            return res.status(400).send("Username already exists");
+       const user =  await knex('user').where({username:username});
+       if (user){
+            return res.status(409).send("Username already exists");
        }
     }catch(error){
         console.log(error);
@@ -52,7 +52,7 @@ router.post("/register", async (req, res) => {
 
 // ## POST /api/user/login
 // -   Generates and responds a JWT for the user to use for future authorization.
-// -   Expected body: { email, password }
+// -   Expected body: { username, password }
 // -   Response format: { token: "JWT_TOKEN_HERE" }
 router.post("/login", async (req, res) => {
     const { username, password } = req.body;

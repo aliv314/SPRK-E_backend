@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const emotionController = require("../controllers/emotionController");
-
-// router
-//     .route("/")
-//     .get(emotionController.getEmotion)
+//api/emotion/
+router
+    .route("/")
+    .get(emotionController.index)
 //     .post(emotionController.postEmotion);
 
 // router

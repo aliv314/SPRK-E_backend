@@ -17,7 +17,7 @@ app.use("/api/user", userRoute);
 
 app.use("/api/entry", entryRoute);
 
-app.use("/api/emotions", emotionRoute);
+app.use("/api/emotion", emotionRoute);
 
 
 app.listen(PORT, () => {
