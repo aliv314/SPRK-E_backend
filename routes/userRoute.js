@@ -6,8 +6,6 @@ GET/POST/ - api/emotion
 GET - api/emotion:id
 */
 
-module.exports = router;
-
 const router = require("express").Router();
 const knex = require('knex')(require('../knexfile'));
 const bcrypt = require('bcryptjs');
@@ -29,7 +27,7 @@ router.post("/register", async (req, res) => {
         console.log(error);
         res.status(400).send("Failed to verify username.");
     }
-    
+
     if (!username || !password) {
         return res.status(400).send("Please enter the required fields.");
     }
