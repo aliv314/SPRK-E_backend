@@ -6,10 +6,10 @@ router
     .get(entryController.index)
     .post(entryController.addEntry);
 
-// router
-//     .route("/:id")
-//     .get(entryController.getEntry)
-//     .put(entryController.putEntry)
-//     .delete(entryController.deleteEntry)
+router
+    .route("/:id")
+    .get(entryController.getEntry)
+    .put(entryController.putEntry)
+    .delete(entryController.deleteEntry)
 
 module.exports = router;

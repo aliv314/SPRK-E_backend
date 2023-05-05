@@ -1,4 +1,3 @@
-const { uuid } = require('uuidv4');
 const knex = require('knex')(require('../knexfile'))
 
 //You can get the user_id by calling api/user/profile.
@@ -40,7 +39,7 @@ exports.addEmotion = (req, res) => {
     })
 }
 
-//Expected request body = {user_id}
+//No request body expected
 exports.getEmotion = (req, res) => {
     knex('emotion')
     .where({id: req.params.id})
