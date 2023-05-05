@@ -1,11 +1,5 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
- exports.seed = async function (knex) {
-    // Deletes ALL existing entries
-    await knex('user').del();
-    await knex('user').insert([
+
+module.exports =[
       {
         id: '1',
         username: 'Deboeasy',
@@ -23,6 +17,5 @@
         username: 'GIGI',
         password: '123456',
       }
-    ]);
-  };
+    ]
  
