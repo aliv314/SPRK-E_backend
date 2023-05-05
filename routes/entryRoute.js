@@ -9,7 +9,7 @@ router
 router
     .route("/:id")
     .get(entryController.getEntry)
-    .put(entryController.putEntry)
+    // .put(entryController.putEntry)
     .delete(entryController.deleteEntry)
 
 module.exports = router;

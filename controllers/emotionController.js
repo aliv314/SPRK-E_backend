@@ -10,6 +10,12 @@ exports.index = (req, res) => {
     knex('emotion')
     .where({user_id: req.body.user_id})
     .join('user', 'emotion.user_id', 'user.id')
+    .select('emotion.id', 
+    'emotion.timestamp', 
+    'emotion.positive',
+    'emotion.negative',
+    'emotion.top_emotion'
+    )
     .then((data) => {
         return res.status(200).json(data);
     })
