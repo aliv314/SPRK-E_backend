@@ -14,19 +14,9 @@ exports.up = function(knex) {
     .onUpdate('CASCADE')
     .onDelete('CASCADE');
     table.timestamp('timestamp').defaultTo(knex.fn.now());
+    table.string('top_emotion').notNullable();
     table.float('positive').notNullable();
     table.float('negative').notNullable();
-    table.float('anger').notNullable();
-    table.float('frustration').notNullable();
-    table.float('fear').notNullable();
-    table.float('confusion').notNullable();
-    table.float('disappointment').notNullable();
-    table.float('confidence').notNullable();
-    table.float('joy').notNullable();
-    table.float('satisfaction').notNullable();
-    table.float('compassion').notNullable();
-    table.float('enthusiasm').notNullable();
-    table.float('thoughtful').notNullable();
   })
 };
 
