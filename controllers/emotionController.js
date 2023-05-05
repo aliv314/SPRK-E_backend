@@ -15,7 +15,9 @@ exports.index = (req, res) => {
 //Posting a new emotion to database.
 //SQL takes care of the timestamp and id automatically.
 //Expected request body = {positive, negative, top_emotion, user_id}
-exports.addEmotion = async (req, res) => {
+//Response body = {emotion_id}
+//Id of the new emotion
+exports.addEmotion = (req, res) => {
     if( !req.body.positive      ||
         !req.body.negative      ||
         !req.body.top_emotion   ||
@@ -27,10 +29,19 @@ exports.addEmotion = async (req, res) => {
     knex('emotion')
     .insert(req.body)
     .then((data) => {
-        res.status(201).send(`Emotion created for user: ${req.body.user_id}`);
+        const res = {
+            emotion_id: data,
+        }
+        res.status(201).json(res);
     })
 
 }
 
-
-
+//Expected request body = {user_id}
+exports.getEmotion = (req, res) => {
+    knex('emotion')
+    .where({id: req.params.id})
+    .then((data) => {
+        return res.status(200).json(data);
+    })
+}

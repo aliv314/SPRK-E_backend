@@ -6,8 +6,8 @@ router
     .get(emotionController.index)
     .post(emotionController.addEmotion);
 
-// router
-//     .route("/:id")
-//     .get(emotionController.getEmotion);
+router
+    .route("/:id")
+    .get(emotionController.getEmotion);
 
 module.exports = router;
