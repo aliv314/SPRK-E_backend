@@ -3,12 +3,13 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 require("dotenv").config();
 const cors = require("cors");
+
 app.use(cors());
 app.use(express.json());
 
 const userRoute = require("./routes/userRoute");
 const entryRoute = require("./routes/entryRoute");
-const emotionRoute = require("/routes/emotionRoute")
+const emotionRoute = require("./routes/emotionRoute")
 
 app.use("/", express.static("public/images"));
 
