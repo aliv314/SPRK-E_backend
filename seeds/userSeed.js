@@ -47,9 +47,9 @@
 
       {
         user_id: '3',
-        username: 'Deboeasy',
-        password: '6785677',
+        username: 'GIGI',
+        password: '123456',
       }
     ]);
   };
-  
+ 
