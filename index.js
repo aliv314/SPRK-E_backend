@@ -11,12 +11,8 @@ const userRoute = require("./routes/userRoute");
 const entryRoute = require("./routes/entryRoute");
 const emotionRoute = require("./routes/emotionRoute")
 
-app.use("/", express.static("public/images"));
-
 app.use("/api/user", userRoute);
-
 app.use("/api/entry", entryRoute);
-
 app.use("/api/emotion", emotionRoute);
 
 
