@@ -1,6 +1,10 @@
 const { uuid } = require('uuidv4');
 const knex = require('knex')(require('../knexfile'))
 
+//You can get the user_id by calling api/user/profile.
+//Need to set up frontend auth for this.
+
+
 //We're trying to get data for one specific user.
 //Expected request body = {user_id}
 exports.index = (req, res) => {
@@ -22,7 +26,7 @@ exports.addEmotion = (req, res) => {
         !req.body.negative      ||
         !req.body.top_emotion   ||
         !req.body.user_id ){
-            return res.status(400).send("Necessary items missing from request body.")
+        return res.status(400).send("Necessary items missing from request body.")
     }
     
 
@@ -34,7 +38,6 @@ exports.addEmotion = (req, res) => {
         }
         res.status(201).json(res);
     })
-
 }
 
 //Expected request body = {user_id}
